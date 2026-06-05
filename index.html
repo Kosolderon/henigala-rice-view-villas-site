@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Henigala Rice View Villas | Investor Draft</title>
+  <style>
+    :root {
+      --ink: #1d261f;
+      --muted: #697569;
+      --green: #54735d;
+      --moss: #8ba284;
+      --rice: #eaf0e2;
+      --sand: #f4f1ea;
+      --cream: #fbfaf5;
+      --line: #d7d9ce;
+      --dark: #233027;
+      --gold: #bca46a;
+      --warn: #8a6d3b;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #171c18;
+      color: var(--ink);
+      font-family: Aptos, "Segoe UI", Arial, sans-serif;
+    }
+
+    .deck {
+      width: min(100vw, 177.78vh);
+      margin: 0 auto;
+    }
+
+    .slide {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      min-height: 100vh;
+      padding: 4.9% 5.2%;
+      background: var(--cream);
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+
+    .slide h1, .slide h2, .slide h3, .slide p { margin: 0; }
+    .title {
+      font-size: clamp(22px, 2.1vw, 38px);
+      line-height: 1.04;
+      letter-spacing: 0;
+      font-weight: 760;
+      max-width: 70%;
+    }
+    .subtitle {
+      margin-top: .55rem;
+      color: var(--muted);
+      font-size: clamp(10px, .85vw, 15px);
+      max-width: 62%;
+    }
+    .rule {
+      height: 1px;
+      background: var(--line);
+      margin-top: 1.05rem;
+      width: 100%;
+    }
+    .foot {
+      position: absolute;
+      left: 5.2%;
+      bottom: 3.2%;
+      width: 86%;
+      color: #879083;
+      font-size: clamp(8px, .65vw, 12px);
+    }
+
+    .cover {
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.58), rgba(0,0,0,.12)),
+        url("assets/WhatsApp Image 2026-06-05 at 13.33.06.jpeg") center/cover no-repeat;
+    }
+    .cover h1 {
+      margin-top: 2%;
+      font-size: clamp(38px, 5vw, 78px);
+      line-height: .98;
+      max-width: 63%;
+    }
+    .cover .subtitle { color: #f2f3ea; font-size: clamp(14px, 1.25vw, 23px); }
+    .metrics {
+      position: absolute;
+      left: 5.2%;
+      right: 5.2%;
+      bottom: 13%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      max-width: 58%;
+    }
+    .metric strong {
+      display: block;
+      color: var(--green);
+      font-size: clamp(24px, 2.5vw, 44px);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .cover .metric strong { color: #f7f4df; }
+    .metric span {
+      display: block;
+      margin-top: .45rem;
+      color: var(--muted);
+      font-size: clamp(10px, .85vw, 15px);
+    }
+    .cover .metric span { color: #f2f3ea; }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.8rem;
+      align-items: stretch;
+    }
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+      margin-top: 1.8rem;
+    }
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .image.contain { object-fit: contain; background: #fff; }
+    .photo-tall { height: 62vh; max-height: 520px; }
+    .photo-mid { height: 43vh; max-height: 360px; }
+    .lead {
+      margin-top: 2.2rem;
+      font-size: clamp(24px, 2.2vw, 42px);
+      line-height: 1.12;
+      font-weight: 750;
+      max-width: 58%;
+    }
+    .note {
+      color: var(--muted);
+      font-size: clamp(13px, 1vw, 18px);
+      line-height: 1.45;
+    }
+    .callout {
+      background: var(--rice);
+      border: 1px solid var(--line);
+      padding: 1.4rem;
+      margin-top: 2rem;
+    }
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 1.4rem 0 0;
+      display: grid;
+      gap: .8rem;
+    }
+    ul.clean li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: clamp(14px, 1.08vw, 21px);
+      line-height: 1.3;
+    }
+    ul.clean li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .5em;
+      width: .42rem;
+      height: .42rem;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-top: 4rem;
+    }
+    .step {
+      text-align: center;
+      color: var(--ink);
+      font-size: clamp(12px, 1vw, 18px);
+    }
+    .step b {
+      display: inline-grid;
+      place-items: center;
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      margin-bottom: .8rem;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1.8rem;
+      font-size: clamp(12px, .95vw, 18px);
+    }
+    th {
+      background: var(--green);
+      color: #fff;
+      text-align: left;
+      font-weight: 700;
+      padding: .75rem .9rem;
+    }
+    td {
+      border: 1px solid var(--line);
+      padding: .65rem .9rem;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: var(--sand); }
+    .side {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 2rem;
+      margin-top: 1.7rem;
+      align-items: center;
+    }
+    .small-title {
+      color: var(--green);
+      font-size: clamp(17px, 1.25vw, 25px);
+      font-weight: 750;
+      margin-bottom: 1rem;
+    }
+    .dark {
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.62), rgba(0,0,0,.22)),
+        url("assets/WhatsApp Image 2026-06-05 at 13.33.07.jpeg") center/cover no-repeat;
+    }
+    .dark .subtitle, .dark .note, .dark .foot { color: #f2f3ea; }
+    .dark ul.clean li { color: #fff; }
+    .dark ul.clean li::before { background: var(--gold); }
+    .ask {
+      margin-top: 1.2rem;
+      font-size: clamp(42px, 6vw, 96px);
+      line-height: .96;
+      font-weight: 800;
+    }
+    .nav {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(29,38,31,.82);
+      color: #fff;
+      padding: 8px 10px;
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+    }
+    .nav button {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      cursor: pointer;
+    }
+    .nav button:hover { background: rgba(255,255,255,.18); }
+
+    @media (max-width: 800px) {
+      .slide {
+        min-height: auto;
+        padding: 2rem 1.2rem 4rem;
+      }
+      .title, .subtitle, .lead, .cover h1 { max-width: 100%; }
+      .metrics, .foot { position: static; width: auto; max-width: none; }
+      .metrics { grid-template-columns: 1fr; margin-top: 3rem; }
+      .grid2, .grid3, .side, .steps { grid-template-columns: 1fr; }
+      .photo-tall, .photo-mid { height: auto; max-height: none; }
+      .image { max-height: 460px; }
+      .nav { display: none; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .deck { width: 100%; }
+      .slide {
+        page-break-after: always;
+        width: 100vw;
+        height: 56.25vw;
+        min-height: 0;
+        border-bottom: 0;
+      }
+      .nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide cover" id="s1">
+      <h1>Henigala Rice View Villas</h1>
+      <p class="subtitle">Boutique villa development рядом с Унаватуной, Шри-Ланка</p>
+      <div class="metrics">
+        <div class="metric"><strong>33 perches</strong><span>земля с rice field view</span></div>
+        <div class="metric"><strong>3 plots</strong><span>первая вилла + 2 продажи</span></div>
+        <div class="metric"><strong>8.5-9 млн RUB</strong><span>ориентир инвестиции</span></div>
+      </div>
+      <div class="foot">Draft for discussion</div>
+    </section>
+
+    <section class="slide" id="s2">
+      <h2 class="title">Коротко о проекте</h2>
+      <p class="subtitle">Мини-девелопмент: земля, первая show villa, продажи следующих объектов</p>
+      <div class="rule"></div>
+      <p class="lead">Проект не сводится к строительству одного дома. Это пилотная модель: купить землю, создать первый доходный объект, доказать продукт и продать следующие две виллы как готовые инвестиционные проекты.</p>
+      <div class="steps">
+        <div class="step"><b>1</b><br>Покупка 33 perches</div>
+        <div class="step"><b>2</b><br>Legal & survey review</div>
+        <div class="step"><b>3</b><br>Дом 1 как show villa</div>
+        <div class="step"><b>4</b><br>Запуск аренды</div>
+        <div class="step"><b>5</b><br>Продажа вилл 2 и 3</div>
+      </div>
+      <div class="foot">Draft for discussion | Subject to legal, technical and financial due diligence</div>
+    </section>
+
+    <section class="slide" id="s3">
+      <h2 class="title">Локация: Henigala / Unawatuna</h2>
+      <p class="subtitle">Google pin: https://maps.app.goo.gl/EiSRo4ghW2Jn5Qhx5</p>
+      <div class="rule"></div>
+      <div class="side">
+        <div class="grid2">
+          <img class="image contain photo-tall" src="assets/карта и расположение/WhatsApp Image 2026-06-05 at 14.28.27 (1).jpeg" alt="Google map pin">
+          <img class="image contain photo-tall" src="assets/карта и расположение/WhatsApp Image 2026-06-05 at 14.28.28.jpeg" alt="Area map">
+        </div>
+        <div>
+          <h3 class="small-title">Сильный туристический контекст</h3>
+          <p class="note">Участок находится в туристической зоне рядом с Унаватуной: вокруг уже есть виллы, guest houses и rental properties. Это важно для будущей аренды и продажи следующих объектов.</p>
+          <ul class="clean">
+            <li>около 2 км от океана</li>
+            <li>около 50 м от основной дороги</li>
+            <li>вид на рисовые поля</li>
+            <li>рядом действующие rental comps</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot">Distances are working assumptions and should be confirmed by map measurement / survey.</div>
+    </section>
+
+    <section class="slide" id="s4">
+      <h2 class="title">Участок: 33 perches с видом на рисовые поля</h2>
+      <p class="subtitle">Земля как основа сделки и будущего upside</p>
+      <div class="rule"></div>
+      <div class="grid2">
+        <img class="image photo-mid" src="assets/WhatsApp Image 2026-06-05 at 13.33.06.jpeg" alt="Rice field view">
+        <img class="image photo-mid" src="assets/WhatsApp Image 2026-06-05 at 13.33.07.jpeg" alt="Access road">
+      </div>
+      <div class="metrics" style="position:static; max-width:none; grid-template-columns:repeat(4,1fr); margin-top:2.2rem;">
+        <div class="metric"><strong>13 млн LKR</strong><span>ориентир цены земли</span></div>
+        <div class="metric"><strong>~394k LKR</strong><span>цена за perch</span></div>
+        <div class="metric"><strong>3 villa plots</strong><span>рабочая модель деления</span></div>
+        <div class="metric"><strong>DD required</strong><span>title, survey, zoning</span></div>
+      </div>
+      <div class="foot">Draft for discussion | Subject to legal, technical and financial due diligence</div>
+    </section>
+
+    <section class="slide" id="s5">
+      <h2 class="title">Due diligence: что уже есть и что проверить</h2>
+      <p class="subtitle">Документы выглядят реальными, но пакет еще не final-clear для сделки</p>
+      <div class="rule"></div>
+      <table>
+        <tr><th>Блок</th><th>Статус</th><th>Комментарий</th></tr>
+        <tr><td>Старые планы / folio extracts</td><td>есть</td><td>нужна юридическая расшифровка цепочки title</td></tr>
+        <tr><td>Квитанции Registrar General</td><td>есть</td><td>подтверждают поиск/копии, не чистоту земли</td></tr>
+        <tr><td>Новый survey plan</td><td>нужно</td><td>границы, доступ, фактическая площадь, setbacks</td></tr>
+        <tr><td>Building / zoning check</td><td>нужно</td><td>3 виллы, бассейны, drainage, septic tanks</td></tr>
+        <tr><td>Финальная структура владения</td><td>нужно</td><td>subject to Sri Lankan legal review</td></tr>
+      </table>
+      <div class="callout"><strong>Позиция для инвестора:</strong> вход возможен только после title search, survey и подтверждения строительной возможности участка.</div>
+      <div class="foot">Draft for discussion | Subject to legal, technical and financial due diligence</div>
+    </section>
+
+    <section class="slide" id="s6">
+      <h2 class="title">Продукт: первая вилла как show house</h2>
+      <p class="subtitle">Дом 1 выбран как базовый пилот: низкий вход, быстрый запуск, понятный ROI</p>
+      <div class="rule"></div>
+      <div class="grid3" style="gap:.9rem; margin-top:1.35rem;">
+        <img class="image" style="height:24vh; max-height:205px;" src="assets/ДОМ/WhatsApp Image 2026-06-04 at 22.03.16 (1).jpeg" alt="House 1 exterior angle">
+        <img class="image" style="height:24vh; max-height:205px;" src="assets/ДОМ/WhatsApp Image 2026-06-04 at 22.03.16.jpeg" alt="House 1 exterior front">
+        <img class="image" style="height:24vh; max-height:205px;" src="assets/ДОМ/WhatsApp Image 2026-06-04 at 22.03.17 (1).jpeg" alt="House 1 aerial">
+        <img class="image" style="height:24vh; max-height:205px;" src="assets/ДОМ/WhatsApp Image 2026-06-04 at 22.03.17.jpeg" alt="House 1 exterior side">
+        <img class="image" style="height:24vh; max-height:205px;" src="assets/ДОМ/WhatsApp Image 2026-06-04 at 22.03.17 (2).jpeg" alt="House 1 interior">
+        <img class="image" style="height:24vh; max-height:205px;" src="assets/ДОМ/WhatsApp Image 2026-06-04 at 22.03.18.jpeg" alt="House 1 bathroom">
+      </div>
+      <div class="grid2" style="margin-top:1rem;">
+        <ul class="clean" style="margin-top:.2rem; gap:.45rem;">
+          <li>2-bedroom modular villa как первая show villa</li>
+          <li>бассейн и приватная зона повышают rental appeal</li>
+          <li>rental-ready после мебели, техники и фото-продакшна</li>
+          <li>визуальный пример для продажи 2 и 3 объекта</li>
+        </ul>
+        <div class="callout" style="margin-top:.2rem;">Дом от подрядчика считается без мебели. Для запуска аренды отдельно закладываем 3 млн LKR на мебель, технику, декор, базовую кухонную комплектацию и подготовку объекта к фотосъемке.</div>
+      </div>
+      <div class="foot">Draft for discussion | Subject to legal, technical and financial due diligence</div>
+    </section>
+
+    <section class="slide" id="s7">
+      <h2 class="title">Два варианта дома: почему стартуем с Дома 1</h2>
+      <p class="subtitle">Разница в CAPEX высокая, но rental uplift может быть ограниченным</p>
+      <div class="rule"></div>
+      <div class="grid2">
+        <img class="image photo-mid" src="assets/ДОМ/WhatsApp Image 2026-06-04 at 22.03.16.jpeg" alt="House 1">
+        <img class="image photo-mid" src="assets/ДОМ 2/WhatsApp Image 2026-06-05 at 14.38.26 (1).jpeg" alt="House 2">
+      </div>
+      <table>
+        <tr><th>Параметр</th><th>Дом 1</th><th>Дом 2</th></tr>
+        <tr><td>Ориентир стоимости</td><td>USD 20k+</td><td>USD 45k+</td></tr>
+        <tr><td>Комплектация</td><td>отделка, ванная, инженерия; без мебели</td><td>отделка, ванная, инженерия; без мебели</td></tr>
+        <tr><td>Роль</td><td>первая show villa</td><td>premium upgrade / future buyer option</td></tr>
+        <tr><td>Арендный вывод</td><td>лучший базовый ROI</td><td>цена может быть выше, но не пропорционально CAPEX</td></tr>
+      </table>
+      <div class="foot">Draft for discussion | Subject to legal, technical and financial due diligence</div>
+    </section>
+
+    <section class="slide" id="s8">
+      <h2 class="title">Airbnb comps рядом: спрос уже существует</h2>
+      <p class="subtitle">Скриншоты показывают активный рынок аренды в окружении участка</p>
+      <div class="rule"></div>
+      <div class="grid3">
+        <img class="image contain photo-tall" src="assets/конкурент вокруг/WhatsApp Image 2026-06-05 at 14.28.26.jpeg" alt="Airbnb comp">
+        <img class="image contain photo-tall" src="assets/конкурент вокруг/WhatsApp Image 2026-06-05 at 14.28.26 (1).jpeg" alt="Airbnb map comp">
+        <img class="image contain photo-tall" src="assets/конкурент вокруг/WhatsApp Image 2026-06-05 at 14.28.27.jpeg" alt="Airbnb comp">
+      </div>
+      <div class="callout">Ориентиры из скриншотов: ~$126/night для 2BR lodge, ~$205/night для 1BR bungalow, premium villa ~$485/night. Для нашей модели используем осторожный сценарий $130-150/night.</div>
+      <div class="foot">Airbnb screenshots are market signals, not guaranteed future revenue.</div>
+    </section>
+
+    <section class="slide" id="s9">
+      <h2 class="title">Арендная модель: осторожный базовый сценарий</h2>
+      <p class="subtitle">Доходность считается отдельно от upside продажи следующих вилл</p>
+      <div class="rule"></div>
+      <table>
+        <tr><th>Показатель</th><th>$130/night</th><th>$150/night</th></tr>
+        <tr><td>Загрузка</td><td>60%</td><td>60%</td></tr>
+        <tr><td>Проданных ночей</td><td>219</td><td>219</td></tr>
+        <tr><td>Валовая выручка / год</td><td>$28,470</td><td>$32,850</td></tr>
+        <tr><td>Расходы</td><td>60%</td><td>60%</td></tr>
+        <tr><td>Чистый доход / год</td><td>$11,388</td><td>$13,140</td></tr>
+        <tr><td>Чистый доход / месяц</td><td>$949</td><td>$1,095</td></tr>
+      </table>
+      <div class="callout">Важно: Дом 2 может выглядеть дороже, но рынок может не заплатить пропорциональную премию за строительный CAPEX. Поэтому для пилота финансово разумнее Дом 1.</div>
+      <div class="foot">Draft for discussion | Subject to legal, technical and financial due diligence</div>
+    </section>
+
+    <section class="slide" id="s10">
+      <h2 class="title">Бюджет первого этапа</h2>
+      <p class="subtitle">Базовый сценарий: земля + Дом 1 + бассейн + подготовка к аренде</p>
+      <div class="rule"></div>
+      <div class="side" style="grid-template-columns:1.35fr .65fr; gap:1.5rem; align-items:start;">
+        <table style="font-size:clamp(11px,.82vw,16px); margin-top:1.2rem;">
+          <tr><th>Статья</th><th>Что включает</th><th>Ориентир</th></tr>
+          <tr><td>Земля 33 perches</td><td>покупка участка с rice field view</td><td>13.0 млн LKR</td></tr>
+          <tr><td>Дом 1: USD 20k+</td><td>каркас, отделка, ванная, инженерия; без мебели</td><td>~6.7 млн LKR+</td></tr>
+          <tr><td>Бассейн</td><td>ключевой драйвер аренды и визуальной ценности</td><td>~3.0 млн LKR</td></tr>
+          <tr><td>Мебель / техника / rental setup</td><td>мебель, базовая техника, декор, kitchen set, фото-подготовка</td><td>~3.0 млн LKR</td></tr>
+          <tr><td>Legal, survey, permits</td><td>юрист, fresh title search, новый survey, approvals</td><td>~1.0-1.5 млн LKR</td></tr>
+          <tr><td>Site works / utilities</td><td>подготовка участка, вода, электричество, septic/drainage, подъезд</td><td>~2.0-4.0 млн LKR</td></tr>
+          <tr><td>Landscape / launch / marketing</td><td>базовое озеленение, фото, листинги, запуск управления</td><td>~1.0-1.5 млн LKR</td></tr>
+          <tr><td>Резерв</td><td>изменение материалов, логистика, курс, непредвиденные работы</td><td>~3.0-5.0 млн LKR</td></tr>
+          <tr><td><strong>Рабочий total</strong></td><td><strong>до финальной сметы подрядчика</strong></td><td><strong>~33-38+ млн LKR</strong></td></tr>
+        </table>
+        <div>
+          <div class="callout" style="margin-top:1.2rem;">
+            <div class="small-title">Investment ask</div>
+            <div class="metric"><strong>8.5-9 млн RUB</strong><span>примерно 39-41 млн LKR при ориентире 1 RUB = 4.6 LKR</span></div>
+          </div>
+          <div class="callout" style="background:var(--sand);">Смысл запаса: не “раздуть бюджет”, а не остановить проект из-за материалов, инженерии, legal/survey delays или изменения курса.</div>
+        </div>
+      </div>
+      <div class="foot">Final budget should be confirmed by contractor quote, survey, approvals and current FX rate.</div>
+    </section>
+
+    <section class="slide" id="s10b">
+      <h2 class="title">Инвестиция в USD и базовый возврат</h2>
+      <p class="subtitle">Аренда дает базовую доходность, продажи следующих вилл добавляют девелоперский upside</p>
+      <div class="rule"></div>
+      <table style="font-size:clamp(11px,.9vw,17px);">
+        <tr><th>Показатель</th><th>Сценарий 8.5 млн RUB</th><th>Сценарий 9.0 млн RUB</th></tr>
+        <tr><td>Ориентир в USD</td><td>≈ $116k</td><td>≈ $123k</td></tr>
+        <tr><td>Чистый доход аренды / год</td><td>$11.4k-13.1k</td><td>$11.4k-13.1k</td></tr>
+        <tr><td>Базовая доходность от аренды</td><td>≈ 9.8-11.3% годовых</td><td>≈ 9.3-10.7% годовых</td></tr>
+        <tr><td>Дополнительный upside</td><td>до 30% чистой прибыли со 2 и 3 виллы</td><td>до 30% чистой прибыли со 2 и 3 виллы</td></tr>
+      </table>
+      <div class="callout">После строительства первой виллы будет понятна реальная себестоимость дома, бассейна, инженерии и запуска. На этой базе можно фиксировать цену продажи второй и третьей виллы и уже точнее считать прибыль от продаж.</div>
+      <p class="lead" style="max-width:86%; font-size:clamp(20px,1.65vw,31px);">Логика для инвестора: аренда может давать базовый пассивный доход, а участие в прибыли от двух следующих продаж потенциально ускоряет возврат всей инвестиции.</p>
+      <div class="foot">USD conversion uses an indicative RUB/USD rate around 0.01366. Final return depends on FX, final costing, occupancy and sale prices.</div>
+    </section>
+
+    <section class="slide" id="s11">
+      <h2 class="title">Валютное окно: действовать быстро</h2>
+      <p class="subtitle">Рублевый вход сейчас может дать инвестору больше локального актива в LKR</p>
+      <div class="rule"></div>
+      <table>
+        <tr><th>Сценарий</th><th>8.5 млн RUB</th><th>9.0 млн RUB</th></tr>
+        <tr><td>1 RUB = 3.0 LKR</td><td>25.5 млн LKR</td><td>27.0 млн LKR</td></tr>
+        <tr><td>1 RUB = 4.6 LKR</td><td>39.1 млн LKR</td><td>41.4 млн LKR</td></tr>
+        <tr><td>Разница</td><td>+13.6 млн LKR</td><td>+14.4 млн LKR</td></tr>
+      </table>
+      <p class="lead" style="max-width:88%; font-size:clamp(24px,2.05vw,38px);">Если рубль продолжит слабеть, а ланкийская рупия традиционно усилится ближе к туристическому сезону, то окно входа может быстро закрыться. Быстрое решение позволяет зафиксировать землю и сэкономить на валютной разнице еще до роста стоимости самого проекта.</p>
+    </section>
+
+    <section class="slide" id="s12">
+      <h2 class="title">Экономика инвестора</h2>
+      <p class="subtitle">Актив + rental income + девелоперский upside</p>
+      <div class="rule"></div>
+      <table>
+        <tr><th>#</th><th>Что получает инвестор</th><th>Смысл</th></tr>
+        <tr><td>1</td><td>Первая вилла</td><td>инвестиционный актив на Шри-Ланке</td></tr>
+        <tr><td>2</td><td>Rental income</td><td>ориентир $11.4k-13.1k чистыми в год</td></tr>
+        <tr><td>3</td><td>Личное использование</td><td>возможность отдыхать в своей вилле</td></tr>
+        <tr><td>4</td><td>Upside проекта</td><td>до 30% чистой прибыли со 2 и 3 виллы</td></tr>
+      </table>
+      <div class="foot">Profit share is a negotiation point. Use “up to 30%” until final structure is agreed.</div>
+    </section>
+
+
+    <section class="slide" id="s14">
+      <h2 class="title">Юридическая логика и последовательность сделки</h2>
+      <p class="subtitle">Сначала защищаем вход инвестора, потом запускаем строительство и продажи следующих вилл</p>
+      <div class="rule"></div>
+      <table style="font-size:clamp(11px,.9vw,17px);">
+        <tr><th>Шаг</th><th>Что делаем</th><th>Зачем инвестору</th></tr>
+        <tr><td>1. Резервируем участок</td><td>фиксируем цену и условия с продавцом, но не переводим основную сумму без проверки</td><td>не теряем возможность, но не берем слепой title risk</td></tr>
+        <tr><td>2. Проверяем землю</td><td>fresh title search, цепочка собственников, encumbrances, seller KYC, новый survey</td><td>понимаем, что именно покупаем и нет ли скрытых прав/споров</td></tr>
+        <tr><td>3. Подтверждаем buildability</td><td>доступ, границы, 3 plots, бассейн, septic/drainage, setbacks, разрешения</td><td>участок подходит не только “для земли”, а именно для проекта</td></tr>
+        <tr><td>4. Структурируем вход</td><td>локальная компания / договор займа / залог / shareholder agreement / management agreement — после юриста</td><td>фиксируем права инвестора, контроль бюджета, reporting и правила выхода</td></tr>
+        <tr><td>5. Покупаем землю и строим Дом 1</td><td>земля + первый modular house + бассейн + rental setup</td><td>инвестор получает первый материальный актив и show villa</td></tr>
+        <tr><td>6. Продаем виллы 2 и 3</td><td>первая вилла доказывает продукт; следующие проекты продаются как turnkey opportunity</td><td>добавляется бонус: до 30% чистой прибыли от следующих продаж</td></tr>
+      </table>
+      <div class="callout">Ключевая мысль: деньги инвестора заходят не “в идею”, а в последовательный процесс — проверка земли, защищенная структура, первый актив, затем продажи следующих объектов.</div>
+      <div class="foot">Final legal structure must be confirmed by Sri Lankan lawyer.</div>
+    </section>
+
+    <section class="slide" id="s15">
+      <h2 class="title">3 villa plots: модель создания стоимости</h2>
+      <p class="subtitle">Первая вилла доказывает продукт; следующие две продаются с меньшим friction</p>
+      <div class="rule"></div>
+      <div class="side">
+        <img class="image contain photo-tall" src="assets/схема межевания.jpeg" alt="Plot split scheme">
+        <table>
+          <tr><th>Plot</th><th>Роль</th><th>Модель дохода</th></tr>
+          <tr><td>1</td><td>Дом 1 + бассейн + аренда</td><td>asset + cashflow + show villa</td></tr>
+          <tr><td>2</td><td>Продажа проекта под ключ</td><td>developer margin + investor profit share</td></tr>
+          <tr><td>3</td><td>Продажа проекта под ключ</td><td>developer margin + investor profit share</td></tr>
+        </table>
+      </div>
+      <div class="foot">Draft for discussion | Subject to legal, technical and financial due diligence</div>
+    </section>
+
+    <section class="slide" id="s16">
+      <h2 class="title">План реализации: сроки и контрольные точки</h2>
+      <p class="subtitle">Каждый этап запускается после проверки предыдущего</p>
+      <div class="rule"></div>
+      <table style="font-size:clamp(11px,.9vw,17px);">
+        <tr><th>Срок</th><th>Этап</th><th>Что происходит простыми словами</th><th>Результат</th></tr>
+        <tr><td>0-2 недели</td><td>Резерв и проверка документов</td><td>фиксируем интерес к земле, собираем документы, юрист проверяет историю владения</td><td>понимаем, можно ли двигаться дальше</td></tr>
+        <tr><td>2-4 недели</td><td>Survey и техническая проверка</td><td>геодезист подтверждает границы, доступ, площадь, возможность деления и посадки домов</td><td>снимаем риск “не тот участок / не влезает проект”</td></tr>
+        <tr><td>1-2 месяц</td><td>Покупка и структура</td><td>после проверки оформляем сделку и юридическую защиту инвестора</td><td>земля и права закреплены</td></tr>
+        <tr><td>2-3 месяц</td><td>Проектирование и approvals</td><td>финализируем Дом 1, бассейн, инженерку, смету, подрядчика и разрешения</td><td>готовность к строительству</td></tr>
+        <tr><td>3-6 месяц</td><td>Строительство</td><td>ставим Дом 1, бассейн, инженерные подключения, участок приводится в товарный вид</td><td>готовый физический объект</td></tr>
+        <tr><td>6-7 месяц</td><td>Мебель и запуск аренды</td><td>меблировка, фото, Airbnb/Booking, управляющая модель, первые бронирования</td><td>вилла начинает генерировать доход</td></tr>
+        <tr><td>7+ месяц</td><td>Продажи 2 и 3 виллы</td><td>используем show villa, цифры аренды и визуал участка для продажи следующих объектов</td><td>девелоперский upside для инвестора и команды</td></tr>
+      </table>
+      <div class="foot">Timeline is indicative and depends on legal review, approvals, contractor schedule and weather.</div>
+    </section>
+
+    <section class="slide" id="s17">
+      <h2 class="title">Риски и решения</h2>
+      <p class="subtitle">Инвестору важно видеть не отсутствие рисков, а понятный контроль над ними</p>
+      <div class="rule"></div>
+      <table style="font-size:clamp(10px,.82vw,16px); margin-top:1.25rem;">
+        <tr><th>Риск</th><th>В чем проблема</th><th>Как снижаем</th></tr>
+        <tr><td>Юридическая чистота земли</td><td>может быть спорная цепочка собственников, обременения, наследники или несовпадение продавца с фактическим владельцем</td><td>fresh title search, проверка folio/deed, seller KYC, заключение местного юриста до оплаты основной суммы</td></tr>
+        <tr><td>Границы и доступ</td><td>старые планы могут не совпадать с фактическими границами; подъезд может быть не оформлен</td><td>новый licensed survey, подтверждение right of way, проверка площади 33 perches и возможности деления</td></tr>
+        <tr><td>Возможность строительства</td><td>3 виллы, бассейны, septic tanks и drainage могут упереться в setbacks или местные правила</td><td>zoning/buildability check до старта, согласование посадки домов, бассейна и инженерии</td></tr>
+        <tr><td>Рост бюджета</td><td>материалы, логистика, курс и инженерия могут увеличить смету</td><td>фиксированный quote, staged payments, резерв 3-5 млн LKR, выбор Дома 1 как более безопасного пилота</td></tr>
+        <tr><td>Арендный спрос</td><td>цена $130-150/night зависит от фото, сезона, отзывов и управления</td><td>Airbnb comps, бассейн, профессиональные фото, сильный листинг, управление и динамическое ценообразование</td></tr>
+        <tr><td>Валютный риск</td><td>RUB/LKR и USD/LKR могут изменить фактический бюджет</td><td>быстро фиксировать землю, держать резерв, часть расходов планировать в LKR/USD, конвертировать поэтапно</td></tr>
+      </table>
+      <div class="foot">Risk mitigation plan is preliminary and must be confirmed during due diligence.</div>
+    </section>
+
+    <section class="slide dark" id="s18">
+      <h2 class="title">Investment Ask</h2>
+      <div class="ask">8.5-9 млн RUB</div>
+      <p class="subtitle" style="max-width:62%; margin-top:1.2rem;">для запуска первого этапа: земля + юридическая проверка + Дом 1 + бассейн + мебель + запуск аренды</p>
+      <ul class="clean" style="max-width:62%; margin-top:2.2rem;">
+        <li>от 10% годовых потенциального пассивного дохода от аренды</li>
+        <li>10-20% потенциальный рост стоимости недвижимости после создания готового объекта</li>
+        <li>бонус: участие в прибыли от продажи двух следующих вилл</li>
+        <li>первая вилла как личный актив и show villa для масштабирования проекта</li>
+      </ul>
+      <div class="foot">Next step: confirm title, survey, final contractor quote and legal structure.</div>
+    </section>
+  </main>
+
+  <div class="nav" aria-label="Slide navigation">
+    <button type="button" id="prev" title="Previous slide">‹</button>
+    <span id="count">1 / 18</span>
+    <button type="button" id="next" title="Next slide">›</button>
+  </div>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const count = document.getElementById('count');
+    let index = 0;
+
+    function go(i) {
+      index = Math.max(0, Math.min(slides.length - 1, i));
+      slides[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      count.textContent = `${index + 1} / ${slides.length}`;
+      history.replaceState(null, '', `#s${index + 1}`);
+    }
+
+    document.getElementById('prev').addEventListener('click', () => go(index - 1));
+    document.getElementById('next').addEventListener('click', () => go(index + 1));
+    window.addEventListener('keydown', (e) => {
+      if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); go(index + 1); }
+      if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); go(index - 1); }
+    });
+    const initial = location.hash.match(/s(\d+)/);
+    if (initial) index = Number(initial[1]) - 1;
+    setTimeout(() => go(index), 0);
+  </script>
+</body>
+</html>
